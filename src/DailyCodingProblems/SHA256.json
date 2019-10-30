@@ -1,0 +1,39 @@
+{
+  "name" : "SHA256",
+  "testType" : "SINGLE",
+  "input" : {
+    "type" : "STANDARD",
+    "fileName" : "input.txt"
+  },
+  "output" : {
+    "type" : "STANDARD",
+    "fileName" : "output.txt"
+  },
+  "tests" : [ {
+    "input" : "HelloWorld",
+    "output" : "872e4e50ce9990d8b041330c47c9ddd11bec6b503ae9386a99da8584e9bb12c4",
+    "index" : 0,
+    "active" : true
+  }, {
+    "input" : "Javarmi123",
+    "output" : "f1d5f8d75bb55c777207c251d07d9091dc10fe7d6682db869106aacb4b7df678",
+    "index" : 1,
+    "active" : true
+  } ],
+  "location" : "src/DailyCodingProblems",
+  "vmArgs" : "-Xmx256m -Xss64m",
+  "mainClass" : "Main",
+  "taskClass" : "DailyCodingProblems.SHA256",
+  "checkerClass" : "net.egork.chelper.checkers.TokenChecker",
+  "checkerParameters" : "",
+  "testClasses" : [ ],
+  "date" : "2019.09.16",
+  "contestName" : "",
+  "truncate" : true,
+  "inputClass" : "java.util.Scanner",
+  "outputClass" : "java.io.PrintWriter",
+  "includeLocale" : false,
+  "failOnOverflow" : false,
+  "interactive" : false,
+  "interactor" : "net.egork.chelper.tester.Interactor"
+}

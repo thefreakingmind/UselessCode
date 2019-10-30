@@ -1,0 +1,39 @@
+{
+  "name" : "ShadyString",
+  "testType" : "SINGLE",
+  "input" : {
+    "type" : "STANDARD",
+    "fileName" : "input.txt"
+  },
+  "output" : {
+    "type" : "STANDARD",
+    "fileName" : "output.txt"
+  },
+  "tests" : [ {
+    "input" : "aaa",
+    "output" : "1",
+    "index" : 0,
+    "active" : true
+  }, {
+    "input" : "ababb",
+    "output" : "3",
+    "index" : 1,
+    "active" : true
+  } ],
+  "location" : "src/CodingContests/Codeagon",
+  "vmArgs" : "-Xmx256M",
+  "mainClass" : "Main",
+  "taskClass" : "CodingContests.Codeagon.ShadyString",
+  "checkerClass" : "net.egork.chelper.checkers.TokenChecker",
+  "checkerParameters" : "",
+  "testClasses" : [ ],
+  "date" : "2019.09.21",
+  "contestName" : "codeagon",
+  "truncate" : true,
+  "inputClass" : "java.util.Scanner",
+  "outputClass" : "java.io.PrintWriter",
+  "includeLocale" : false,
+  "failOnOverflow" : false,
+  "interactive" : false,
+  "interactor" : "net.egork.chelper.tester.Interactor"
+}

@@ -2,9 +2,7 @@ import java.io.OutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
-import java.util.Map;
 import java.util.Scanner;
-import java.util.HashMap;
 
 /**
  * Built using CHelper plug-in
@@ -18,30 +16,29 @@ public class Main {
         OutputStream outputStream = System.out;
         Scanner in = new Scanner(inputStream);
         PrintWriter out = new PrintWriter(outputStream);
-        Socks solver = new Socks();
+        Sherlock solver = new Sherlock();
         solver.solve(1, in, out);
         out.close();
     }
 
-    static class Socks {
+    static class Sherlock {
         public void solve(int testNumber, Scanner in, PrintWriter out) {
-            int n = in.nextInt();
-            Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-            while (n-- > 0) {
-                int c = in.nextInt();
-                Integer frequency = map.get(c);
-                if (frequency == null) {
-                    map.put(c, 1);
-                } else {
-                    map.put(c, frequency + 1);
-
+            int dp[][] = new int[100][100];
+            int z = 1000;
+            int[] arr = new int[z];
+            int t = in.nextInt();
+            while (t-- > 0) {
+                int n, i, j;
+                n = in.nextInt();
+                for (i = 0; i < n; i++) {
+                    arr[i] = in.nextInt();
                 }
+                for (int m = 0; m < n - 1; m++) {
+                    dp[i + 1][0] = Math.max(dp[i][0], dp[i][1] + Math.abs(arr[i] - arr[i - 1]));
+                    dp[i + 1][1] = Math.max(dp[i][0] + Math.abs(arr[i + 1] - 1), dp[i][1] + Math.abs(arr[i] - arr[i + 1]));
+                }
+                out.println(Math.max(dp[n - 1][0], dp[n - 1][1]));
             }
-            int pairs = 0;
-            for (Integer frequency : map.values()) {
-                pairs += frequency >> 1;
-            }
-            out.println(pairs);
         }
 
     }

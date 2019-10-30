@@ -1,11 +1,7 @@
 package GraphTheory;
 
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-
+import java.util.*;
 public class Graph<T>{
     private Map<T, List<T>> map = new HashMap<>();
     public void addVertex(T s){
@@ -37,8 +33,6 @@ public class Graph<T>{
             }
         }
     }
-
-
     public static void main(String[] args) {
         Graph g = new Graph();
         g.addEdge(1,2, false);

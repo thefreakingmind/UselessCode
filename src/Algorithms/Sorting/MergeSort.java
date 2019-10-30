@@ -11,11 +11,16 @@ class MergeSort{
     List<String> list = new ArrayList<String>();
 
     public void Merge(int[] arr, int mid, int l , int r){
-        //TODO Implement a Merge Method.
+        //TODO Implement a Merge Method
 
     }
     public void sort(int[] arr, int l, int r){
         //TODO Implement a Sort Method.
+        int mid = (l+r)/2;
+        sort(arr, l, r+1);
+        sort(arr, l+1, r);
+        Merge(arr, mid, l+1, r );
+
 
     }
     public void PrintArray(int[] arr){
